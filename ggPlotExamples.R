@@ -9,7 +9,6 @@ install.packages("reshape2")
 
 library("ggplot2")
 library("plyr")
-library
 
 ## Make sure to call these into activity using the library() command ##
 
