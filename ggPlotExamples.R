@@ -70,8 +70,28 @@ d2plot = ggplot(data = d2, aes(carat, price, color = color)) + geom_point(size =
 library(MASS)
 
 ## Have to factor race since it is coded as numbers in this package ##
-ggplot(birthwt, aes(factor(race), bwt)) + geom_boxplot()
+BirthBoxplot = ggplot(birthwt, aes(factor(race), bwt)) + geom_boxplot()
+summary(BirthBoxplot)
 
+## Next part of ggplot grammar: FACETS ##
+
+## Allows us to subset the data and make subplots for certain sets of the data ##
+## the dot in facet grid means that we are cutting up by species and nothing else ##
+myplot = ggplot(data = iris, aes(Sepal.Length,Sepal.Width, color = Species)) + 
+  geom_point(aes(shape = Species), size = 3) +
+  facet_grid(Species ~ .)
+
+
+## Can flip the axes ##
+myplot = ggplot(data = iris, aes(Sepal.Length,Sepal.Width, color = Species)) + 
+  geom_point(aes(shape = Species), size = 3) +
+  facet_grid(. ~ Species)
+
+## Can Wrap facets ##
+
+myplot = ggplot(data = iris, aes(Sepal.Length,Sepal.Width, color = Species)) + 
+  geom_point(aes(shape = Species), size = 3) +
+  facet_wrap(~ Species)
 
 
 
