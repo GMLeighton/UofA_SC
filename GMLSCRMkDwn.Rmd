@@ -15,9 +15,25 @@ setwd("/home/gmleighton/SC_Demo/output/")
 CountryData <- read.delim("combined_gapMinder.tsv", sep="\t")
 ```
 
-I'm going to use 
+I'm going to use Namibia, Botswana, and South Africa so I'm going to use subset to isolate the data from these countries.
 
-You can also embed plots, for example:
+```{r}
+CountrySubset = subset(CountryData, country == "Namibia" | country == "Botswana" | country == "South Africa")
+```
+
+Need to calculate total GDP
+CountrySubset$TotalGDP = CountrySubset$pop * CountrySubset$gdpPercap
+
+```{r, echo=FALSE}
+FullPlot = ggplot(data = CountrySubset, aes(year,gdpPercap)) + 
+  geom_point(size = 3) +
+  facet_grid(country ~ .) +
+  theme_bw() +
+  theme(panel.background = element_rect(colour = "white"), panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank())
+FullPlot
+```
+
 
 ```{r, echo=FALSE}
 plot(cars)
