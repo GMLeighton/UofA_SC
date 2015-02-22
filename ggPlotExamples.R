@@ -105,6 +105,11 @@ dfplot = ggplot(df, aes(Species, value, fill = variable)) +
 ## Note, fill is the color label for bar plots ##
 ## Dodge allows us to separate all the bars by species ##
 
+##Fix THiS##
+BirthBoxplot = ggplot(birthwt, aes(factor(race), bwt)) + geom_boxplot(width = 0.2) + 
+  scale_y_continuous(labels = (ppaste0(1:4, "Kg")), +
+  breaks = seq(1000,4000, by = 1000)
+## FIX THIS ##
 
 
 
