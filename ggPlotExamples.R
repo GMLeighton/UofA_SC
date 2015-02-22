@@ -93,6 +93,26 @@ myplot = ggplot(data = iris, aes(Sepal.Length,Sepal.Width, color = Species)) +
   geom_point(aes(shape = Species), size = 3) +
   facet_wrap(~ Species)
 
+## Next piece of grammar is scales ##
+## Most often used in color mapping when we set colors manually ##
+## Use RColorBrewer for color choices ##
+
+df = melt(iris, id.vars = "Species")
+dfplot = ggplot(df, aes(Species, value, fill = variable)) +
+          geom_bar(stat = "identity", position = "dodge") +
+          scale_fill_brewer(palette = "Set1")
+
+## Note, fill is the color label for bar plots ##
+## Dodge allows us to separate all the bars by species ##
+
+
+
+
+
+
+
+
+
 
 
 
