@@ -5,13 +5,17 @@ date: "2/22/2015"
 output: html_document
 ---
 
-
-
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
+
+The first couple steps allowed me to figure out where I am.
+
 ```{r}
-summary(cars)
+setwd("/home/gmleighton/SC_Demo/output/")
+CountryData <- read.delim("combined_gapMinder.tsv", sep="\t")
 ```
+
+I'm going to use 
 
 You can also embed plots, for example:
 
