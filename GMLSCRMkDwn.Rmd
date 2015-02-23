@@ -5,6 +5,10 @@ date: "2/22/2015"
 output: html_document
 ---
 
+```{r}
+library("ggplot2")
+```
+
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
 
@@ -40,9 +44,8 @@ FullPlot
 The mean, min, and max of each continent are presented below:
 
 ```{r}
-Need to create continent list
 ContinentList = as.list(CountryData$continent)
-MeanLifeExpectancy = aggregate(CountryData, by = ContinentList, FUN = mean)
+MeanLifeExpectancy = aggregate(CountryData$lifeExp, by = as.list(CountryData$continent), FUN = mean)
 ```
 
 
