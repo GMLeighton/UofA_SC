@@ -15,6 +15,7 @@ setwd("/home/gmleighton/SC_Demo/output/")
 CountryData <- read.delim("combined_gapMinder.tsv", sep="\t")
 ```
 
+
 I'm going to use Namibia, Botswana, and South Africa so I'm going to use subset to isolate the data from these countries.
 
 ```{r}
@@ -35,8 +36,18 @@ FullPlot
 ```
 
 
-```{r, echo=FALSE}
-plot(cars)
+
+The mean, min, and max of each continent are presented below:
+
+```{r}
+Need to create continent list
+ContinentList = as.list(CountryData$continent)
+MeanLifeExpectancy = aggregate(CountryData, by = ContinentList, FUN = mean)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r, echo=FALSE}
+
+```
+
+

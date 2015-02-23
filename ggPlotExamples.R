@@ -2,6 +2,8 @@
 ##02_22_2015##
 ##Duchess##
 
+
+install.packages("ggplot")
 install.packages("ggplot2", depedencies = TRUE)
 install.packages("plyr")
 install.packages("ggthemes")
